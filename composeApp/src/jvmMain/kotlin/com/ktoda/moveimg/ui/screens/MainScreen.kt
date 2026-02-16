@@ -26,18 +26,18 @@ fun MainScreen(windowState: WindowState? = null) {
             .clip(
                 if (isMaximized) RectangleShape
                 else RoundedCornerShape(
-                    bottomStart = appConfigs.radius,
-                    bottomEnd = appConfigs.radius
+                    bottomStart = appConfigs.theme.radius,
+                    bottomEnd = appConfigs.theme.radius
                 )
             )
-            .background(appConfigs.frameBgClr)
+            .background(appConfigs.theme.frameBgClr)
     ) {
         Column(Modifier.fillMaxSize()) {
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Main Screen Content", color = appConfigs.textClr)
+                Text("Main Screen Content", color = appConfigs.theme.textClr)
             }
         }
     }
