@@ -10,29 +10,34 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.window.WindowPlacement
+import androidx.compose.ui.window.WindowState
 import com.ktoda.moveimg.data.config.LocalAppConfig
 
 @Composable
-fun MainScreen() {
+fun MainScreen(windowState: WindowState? = null) {
     val appConfigs = LocalAppConfig.current
+    val isMaximized = windowState?.placement == WindowPlacement.Maximized
 
     Box(
         modifier = Modifier
             .fillMaxSize()
             .clip(
-                RoundedCornerShape(
-                    bottomStart = appConfigs.radius,
-                    bottomEnd = appConfigs.radius
+                if (isMaximized) RectangleShape
+                else RoundedCornerShape(
+                    bottomStart = appConfigs.theme.radius,
+                    bottomEnd = appConfigs.theme.radius
                 )
             )
-            .background(appConfigs.frameBgClr)
+            .background(appConfigs.theme.frameBgClr)
     ) {
         Column(Modifier.fillMaxSize()) {
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Main Screen Content", color = appConfigs.textClr)
+                Text("Main Screen Content", color = appConfigs.theme.textClr)
             }
         }
     }

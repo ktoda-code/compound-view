@@ -1,25 +1,18 @@
 package com.ktoda.moveimg.data.config
 
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
+import com.ktoda.moveimg.platform.os.WindowsPlatform
 
 @Immutable
 data class AppConfigs(
-    val frameBgClr: Color = Color(0xFF0E0F12),
-    val panelBgClr: Color = Color(0xFF14161B),
-    val textClr: Color = Color(0xFFD0D0D0),
-    val borderClr: Color = Color(0x26FFFFFF),
-    val radius: Dp = 14.dp,
-    val frameShape: RoundedCornerShape = RoundedCornerShape(radius)
+    val theme: ThemeConfig = DarkTheme
 )
 
-// FOR NOW: Assuming we wll not change colors, panel colors and radius.
 val LocalAppConfig = staticCompositionLocalOf<AppConfigs> {
     error("No AppConfigs provided")
 }
@@ -32,4 +25,20 @@ fun ProvideAppConfig(
     CompositionLocalProvider(LocalAppConfig provides appConfigs) {
         content()
     }
+}
+
+@Composable
+fun MoveImgTheme(
+    isDarkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    val windowsAccent = remember { WindowsPlatform.getSystemAccentColor() }
+
+    val appConfig = remember(isDarkTheme, windowsAccent) {
+        val baseTheme = if (isDarkTheme) DarkTheme else LightTheme
+        // override the accent color from OS
+        AppConfigs(theme = baseTheme.copy(accentClr = windowsAccent))
+    }
+
+    ProvideAppConfig(appConfig, content)
 }

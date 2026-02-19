@@ -7,29 +7,26 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.application
-import com.ktoda.moveimg.data.config.AppConfigs
-import com.ktoda.moveimg.data.config.ProvideAppConfig
+import com.ktoda.moveimg.data.config.MoveImgTheme
 
 fun main() = application {
-    val appConfigs = AppConfigs()
-
-    val initialWindowState = WindowState(
-        size = DpSize(
-            width = 1200.dp,
-            height = 800.dp
-        ),
+    val windowState = WindowState(
+        size = DpSize(1200.dp, 800.dp),
         position = WindowPosition.Aligned(Alignment.Center),
     )
 
     Window(
         onCloseRequest = ::exitApplication,
-        state = initialWindowState,
+        state = windowState,
         title = "Move Images",
         undecorated = true,
         transparent = true
     ) {
-        ProvideAppConfig(appConfigs) {
-            App()
+        MoveImgTheme {
+            App(
+                windowState = windowState,
+                onClose = ::exitApplication
+            )
         }
     }
 }

@@ -27,6 +27,10 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
+
+            //Windows Registry access to get the theme accent clr
+            implementation("net.java.dev.jna:jna:5.18.0")
+            implementation("net.java.dev.jna:jna-platform:5.18.0")
         }
     }
 }
