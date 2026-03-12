@@ -1,4 +1,4 @@
-package com.ktoda.moveimg.ui.components
+package com.ktoda.compoundview.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowScope
 import androidx.compose.ui.window.WindowState
-import com.ktoda.moveimg.data.config.LocalAppConfig
+import com.ktoda.compoundview.data.config.LocalAppConfig
 
 @Composable
 fun WindowScope.TitleBar(

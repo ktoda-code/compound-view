@@ -1,4 +1,4 @@
-package com.ktoda.moveimg.platform.os
+package com.ktoda.compoundview.platform.os
 
 import androidx.compose.ui.graphics.Color
 import com.sun.jna.platform.win32.Advapi32Util
@@ -24,7 +24,7 @@ object WindowsPlatform {
             val finalAlpha = if (a == 0) 255 else a
 
             Color(red = r, green = g, blue = b, alpha = finalAlpha)
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             DefaultAccent
         }
     }

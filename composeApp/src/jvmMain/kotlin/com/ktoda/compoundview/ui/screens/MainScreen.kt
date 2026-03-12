@@ -1,4 +1,4 @@
-package com.ktoda.moveimg.ui.screens
+package com.ktoda.compoundview.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -13,7 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowState
-import com.ktoda.moveimg.data.config.LocalAppConfig
+import com.ktoda.compoundview.data.config.LocalAppConfig
 
 @Composable
 fun MainScreen(windowState: WindowState? = null) {

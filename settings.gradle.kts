@@ -1,4 +1,4 @@
-rootProject.name = "moveimg"
+rootProject.name = "compound_view"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

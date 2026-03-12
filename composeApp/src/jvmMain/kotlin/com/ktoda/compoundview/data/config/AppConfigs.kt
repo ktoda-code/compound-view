@@ -1,4 +1,4 @@
-package com.ktoda.moveimg.data.config
+package com.ktoda.compoundview.data.config
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
@@ -6,7 +6,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.ktoda.moveimg.platform.os.WindowsPlatform
+import com.ktoda.compoundview.platform.os.WindowsPlatform
 
 @Immutable
 data class AppConfigs(
