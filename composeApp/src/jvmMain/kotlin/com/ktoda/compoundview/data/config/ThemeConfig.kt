@@ -1,4 +1,4 @@
-package com.ktoda.moveimg.data.config
+package com.ktoda.compoundview.data.config
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Immutable

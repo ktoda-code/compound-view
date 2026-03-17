@@ -1,4 +1,4 @@
-package com.ktoda.moveimg.app
+package com.ktoda.compoundview.app
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -6,8 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.WindowScope
 import androidx.compose.ui.window.WindowState
-import com.ktoda.moveimg.ui.components.TitleBar
-import com.ktoda.moveimg.ui.screens.MainScreen
+import com.ktoda.compoundview.ui.components.TitleBar
+import com.ktoda.compoundview.ui.screens.MainScreen
 
 @Composable
 fun WindowScope.App(

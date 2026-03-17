@@ -1,4 +1,4 @@
-package com.ktoda.moveimg
+package com.ktoda.compoundview
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

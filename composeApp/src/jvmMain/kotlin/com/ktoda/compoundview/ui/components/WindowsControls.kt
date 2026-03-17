@@ -1,4 +1,4 @@
-package com.ktoda.moveimg.ui.components
+package com.ktoda.compoundview.ui.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -6,7 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.HoverInteraction
 import androidx.compose.foundation.interaction.collectIsHoveredAsState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -18,10 +17,8 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.input.pointer.PointerEventType
-import androidx.compose.ui.input.pointer.onPointerEvent
 import androidx.compose.ui.unit.dp
-import com.ktoda.moveimg.data.config.LocalAppConfig
+import com.ktoda.compoundview.data.config.LocalAppConfig
 
 @Composable
 fun MinimizeButton(action: () -> Unit) {
