@@ -1,0 +1,2 @@
+Common files for linux and windows platforms. This is where you should put your common code, which will be shared
+between all platforms. Here should stay for example themes, common UI components, and so on.
