@@ -18,9 +18,7 @@ fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
         state = windowState,
-        title = "Move Images",
-        undecorated = true,
-        transparent = true
+        title = "CompoundView"
     ) {
         MoveImgTheme {
             App(

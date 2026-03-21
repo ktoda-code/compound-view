@@ -28,7 +28,7 @@ kotlin {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
 
-            //Windows Registry access to get the theme accent clr
+            // Windows Registry access to get the theme accent clr
             implementation("net.java.dev.jna:jna:5.18.0")
             implementation("net.java.dev.jna:jna-platform:5.18.0")
         }
@@ -38,12 +38,14 @@ kotlin {
 
 compose.desktop {
     application {
-        mainClass = "com.ktoda.moveimg.app.MainKt"
+        mainClass = "com.ktoda.compoundview.app.MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.ktoda.moveimg"
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Rpm, TargetFormat.Exe)
+            packageName = "com.ktoda.compoundview"
             packageVersion = "1.0.0"
+            description = "Compound view application"
+            copyright = "© 2025-2026 Compound View. All rights reserved."
         }
     }
 }
