@@ -7,7 +7,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.application
-import com.ktoda.compoundview.data.config.MoveImgTheme
+import com.ktoda.compoundview.platform.rememberDesktopPlatformServices
 
 fun main() = application {
     val windowState = WindowState(
@@ -20,11 +20,13 @@ fun main() = application {
         state = windowState,
         title = "CompoundView"
     ) {
-        MoveImgTheme {
-            App(
+        App(
+            platformServices = rememberDesktopPlatformServices(
                 windowState = windowState,
-                onClose = ::exitApplication
+                onCloseRequest = ::exitApplication
             )
-        }
+        )
     }
 }
+
+
